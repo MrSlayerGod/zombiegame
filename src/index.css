@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-crimson: #dc2626;
+  --color-crimson-dark: #991b1b;
+  --color-abyss: #050508;
+  --color-bone: #d4d4d8;
+}
+
+@keyframes flash-red {
+  0%, 100% {
+    opacity: 1;
+    text-shadow:
+      0 0 10px rgba(220,38,38,0.8),
+      0 0 30px rgba(220,38,38,0.6),
+      0 0 60px rgba(220,38,38,0.4),
+      0 0 100px rgba(220,38,38,0.2);
+  }
+  50% {
+    opacity: 0.4;
+    text-shadow:
+      0 0 5px rgba(220,38,38,0.3),
+      0 0 15px rgba(220,38,38,0.1);
+  }
+}
+
+@keyframes flash-red-slow {
+  0%, 100% {
+    opacity: 0.9;
+    filter: drop-shadow(0 0 15px rgba(220,38,38,0.7)) drop-shadow(0 0 40px rgba(220,38,38,0.3));
+  }
+  50% {
+    opacity: 0.3;
+    filter: drop-shadow(0 0 5px rgba(220,38,38,0.2));
+  }
+}
+
+@keyframes skull-pulse {
+  0%, 100% {
+    opacity: 0.7;
+    filter: drop-shadow(0 0 20px rgba(220,38,38,0.6)) drop-shadow(0 0 60px rgba(220,38,38,0.3));
+  }
+  50% {
+    opacity: 0.35;
+    filter: drop-shadow(0 0 8px rgba(220,38,38,0.2));
+  }
+}
+
+@keyframes subtle-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #050508;
+  color: #d4d4d8;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+.animate-flash-red {
+  animation: flash-red 1.5s ease-in-out infinite;
+}
+
+.animate-flash-red-slow {
+  animation: flash-red-slow 2s ease-in-out infinite;
+}
+
+.animate-skull-pulse {
+  animation: skull-pulse 2.5s ease-in-out infinite;
+}
+
+.animate-subtle-float {
+  animation: subtle-float 4s ease-in-out infinite;
+}
